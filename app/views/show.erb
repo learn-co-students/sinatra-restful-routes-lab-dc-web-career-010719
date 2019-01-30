@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Recipe Index</title>
+  <title><%= @recipe.name %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   <script src="main.js"></script>
 </head>
 <body>
-  <h1>Recipe Index</h1>
+  <h1><%= @recipe.name %></h1>
+  <h3><%= @recipe.ingredients %></h3>
+  <h3><%= @recipe.cook_time %></h3>
 
-  <ul>
-  <% @recipes.each do |recipe| %>
-      <li><a href="/recipes/<%= recipe.id %>"<%= recipe.name %>
-        </a>
-      </li>
-  <% end %>
-  </ul>
+  <form action="/recipes/<%= @recipe.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete">
+  </form>
+
 </body>
 </html>
