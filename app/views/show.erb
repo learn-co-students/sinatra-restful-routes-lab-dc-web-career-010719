@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Recipe</title>
+  </head>
+  <body>
+    <h1>Here is the recipe that you are looking for:</h1>
+    <h2>Recipe Name: <%=@recipe.name%></h2>
+    <h2>Ingredients: <%=@recipe.ingredients%></h2>
+    <h2>Cook Time: <%=@recipe.cook_time%></h2>
+
+    <!--<form action="/recipes/<%=@recipe.id%>/edit" method="get">
+      <input type="submit" name="" value="Edit">
+    </form>-->
+
+    <form action="/recipes/<%=@recipe.id%>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" id="delete" value="Delete">
+    </form>
+  </body>
+</html>
