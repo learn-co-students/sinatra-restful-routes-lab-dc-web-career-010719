@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page for Recipes</title>
+  </head>
+  <body>
+    <h1>Welcome to our webiste. Here is the list of all recipes!</h1>
+    <ul>
+    <%@recipes.each do |recipe|%>
+      <li><a href="/recipes/<%=recipe.id%>"><%=recipe.name%></a></li>
+    <%end%>
+    </ul>
+  </body>
+</html>
